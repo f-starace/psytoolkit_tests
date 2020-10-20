@@ -29,7 +29,7 @@ task pvt_trial
   if STATUS == TIMEOUT # NO ANTICIPATION ERROR
     clear -1
     show circle $x_coordinate $y_coordinate 20 255 0 0 
-    readkey 1 600000
+    readkey 1 600000 #check commit changes
     clear -1
     save RT
     show text "correct"

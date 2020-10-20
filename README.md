@@ -14,6 +14,8 @@
 
 • Immagino sia possibile inserire un messaggio finale alla fine dell'esperimento in maniera similare a quanto avviene all'avvio grazie al file pvt_test.png.
 
+
+<hr>
 I risultati dell'esperimento vengono mostrati in una singola colonna dove:
 
 - gli errori di anticipazioni vengono segnalati come -1

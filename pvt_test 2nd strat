@@ -1,0 +1,37 @@
+options
+  #fullscreen  
+
+task pvt_trial
+  # USER INPUTS
+  keys space
+  #
+  #
+  # RANDOM VARIABLES
+  set $x_coordinate random -300 300  # random x position
+  set $y_coordinate random -300 300  # random y position
+  set $wait_time random 1 5       # random wait_time 
+  #
+  # DEAL WITH TIMESTAMPS
+  #
+  # get the current timestamp since the start of the experiment
+  timestamp myTimeStamp  
+  set $current_time timestamp-seconds myTimeStamp
+  #
+  # display an invisible rectangle, if clicked the user looses points (anticipation error)
+  show rectangle 0 0 0 0 0 0 0
+  readkey 1 $wait_time
+  clear -1
+  #
+  # display circle after while loop
+  #
+  show circle $x_coordinate $y_coordinate 20 255 0 0 
+  readkey 1 600000
+  clear -1
+  save RT
+
+  
+block PVT
+  maxtime 10m
+  tasklist
+      pvt_trial 10000
+  end

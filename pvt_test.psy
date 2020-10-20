@@ -2,50 +2,49 @@ options
   #fullscreen  
 
 task pvt_trial
-  # USER INPUT
+  # USER INPUTS
   keys space
   #
   #
   # RANDOM VARIABLES
-  set $x_coordinate random 0 300 # random x position
-  set $y_coordinate random 0 300 # random y position
-  # set a random wait_time 
-  set $wait_time random 1 9
+  set $x_coordinate random -300 300  # random x position
+  set $y_coordinate random -300 300  # random y position
+  set $wait_time random 1 5       # random wait_time 
   #
   # DEAL WITH TIMESTAMPS
   #
-  # get the current timestamp since the start of the experiment
+  # get the current timestamp since the start of the experiment
   timestamp myTimeStamp  
+  #
   set $current_time timestamp-seconds myTimeStamp
   #
-  # calculate the timestamp in which the stimulus should present
+  # calculate the timestamp in which the stimulus should present
   #
   set $stimulus_timestamp expression $current_time + $wait_time  
   #
-  # loop event, if the keyboard press is triggered during the wait-time =>
-  # the user looses points
+  # loop event, if the keyboard press is triggered during the wait-time
+  # => the user looses points
   #
+  set $counter 0
   #
-  
-  while $current_time < $stimulus_timestamp   
-      show rectangle 0 0 20 20 0 0 255
+  while $counter < 1
       timestamp updatedTimeStamp
       set $elapsed_time timestamp-seconds updatedTimeStamp
       if $elapsed_time > $stimulus_timestamp
+        set $counter increase 1
       fi
   while-end
-  #
   #
   # display circle after while loop
   #
   show circle $x_coordinate $y_coordinate 20 255 0 0 
-  readkey 1 5000
-  clear 1
+  readkey 1 600000
+  clear -1
   save RT
 
   
 block PVT
   maxtime 10m
   tasklist
-      pvt_trial 100
+      pvt_trial 10000
   end

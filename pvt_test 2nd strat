@@ -16,21 +16,31 @@ task pvt_trial
   # display an invisible rectangle, if clicked the user looses points (anticipation error)
   show rectangle 0 0 0 0 0 0 0
   readkey 1 $wait_time_ms
-  if STATUS==correct
-    show text "too soon"  
+  if STATUS == CORRECT # IT MEANS WE ENCOUNTER AN ANTICIPATION ERROR
+    save RT
+    set &score expression &score -3
+    clear -1
+    show text "anticipation error"
+    delay 1000
   fi
-  clear -1
-  #
-  # display circle after while loop
-  #
-  show circle $x_coordinate $y_coordinate 20 255 0 0 
-  readkey 1 600000
-  clear -1
-  save RT
+  if STATUS == TIMEOUT
+    clear -1
+    # display circle after while loop
+    show circle $x_coordinate $y_coordinate 20 255 0 0 
+    readkey 1 600000
+    clear -1
+    save RT
+  show text "correct"
+  delay 1000
+  fi
+
+
+
 
   
 block PVT
-  maxtime 10m
+  maxtime 1m
+  set &score 0
   tasklist
       pvt_trial 10000
   end

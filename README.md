@@ -24,7 +24,7 @@ I risultati dell'esperimento vengono mostrati in una singola colonna dove:
 
 <hr>
 
-<bold> Tutti i valori sono modificabili.</bold>
+<strong> Tutti i valori sono modificabili.</strong>
  
  
 Per modifiche e/o suggerimenti potete scrivermi qui o via e-mail all'indirizzo: f.starace@studenti.unipi.it

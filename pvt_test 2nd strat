@@ -21,7 +21,7 @@ task pvt_trial
   #
   # display an invisible rectangle, if clicked the user looses points (anticipation error)
   show rectangle 0 0 0 0 0 0 0
-  readkey 1 $wait_time
+  readkey 1 $wait_time_ms
   clear -1
   #
   # display circle after while loop

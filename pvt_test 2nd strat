@@ -10,6 +10,8 @@ task pvt_trial
   set $x_coordinate random -300 300  # random x position
   set $y_coordinate random -300 300  # random y position
   set $wait_time random 1 5       # random wait_time 
+  # convert wait time in ms
+  set $wait_time_ms expression $wait_time * 1000
   #
   # DEAL WITH TIMESTAMPS
   #

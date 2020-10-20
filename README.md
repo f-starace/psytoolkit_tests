@@ -1,5 +1,9 @@
 # psytoolkit_tests
 
+• Input registrato dall'utente: spacebar
+
+• fullscreen: no
+
 • Durata del test: 1 min
 
 • Tempo di presentazione dello stimolo: random da 1 a 5 sec

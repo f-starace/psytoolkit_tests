@@ -22,10 +22,15 @@ I risultati dell'esperimento vengono mostrati in una singola colonna dove:
 
 - le registrazioni della pressione della barra spaziatrice sono registrate come RT in ms.
 
+<hr>
 
 <bold> Tutti i valori sono modificabili.</bold>
-  
+ 
+ 
+Per modifiche e/o suggerimenti potete scrivermi qui o via e-mail all'indirizzo: f.starace@studenti.unipi.it
   
 Scuso in anticipo il lettore per eventuali errori di grammatica o frasi sconclusionate ma ho fatto le cose di corsa
+
+p.s. Straconsiglio di passare ad un linguaggio di programmazione vero poiché lo scripting language di Psytoolkit è altamente limitante.
 
 
